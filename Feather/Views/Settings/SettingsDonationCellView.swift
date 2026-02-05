@@ -12,38 +12,6 @@ import NimbleViews
 struct SettingsDonationCellView: View {
 	var site: String
 	
-	var body: some View {
-		Section {
-			VStack(spacing: 14) {
-				_title()
-				_benefit(
-					.localized("Remove this Alert"),
-					.localized("Remove annoying alerts like these after getting beta access!"),
-					systemName: "heart.text.square.fill"
-				)
-				_benefit(
-					.localized("Exclusive Features"),
-					.localized("After gaining beta access, you're able to use exclusive features that may not be present on releases!"),
-					systemName: "timer"
-				)
-				_benefit(
-					.localized("Show Your Support"),
-					.localized("Show your support by donating! If you're unable to donate, spreading the word works too!"),
-					systemName: "heart.fill"
-				)
-				
-				Button() {
-					UIApplication.open(site)
-				} label: {
-					_sheetButton(.localized("Donate"))
-				}
-				.frame(height: 45)
-			}
-			.padding(.vertical, 12)
-			.buttonStyle(.plain)
-		}
-	}
-	
 	@ViewBuilder
 	private func _title() -> some View {
 		VStack(alignment: .center, spacing: 12) {
